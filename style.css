@@ -1,0 +1,72 @@
+/* Wandless support site — the game's ember palette, one stylesheet, no dependencies. */
+:root {
+  --bg: #0d0a09;
+  --panel: #18120f;
+  --line: #2c221c;
+  --fg: #f2ebe4;
+  --body: #d9cfc6;
+  --muted: #a3968b;
+  --accent: #e0782f;
+  --accent2: #b8432a;
+  --link: #f0a868;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--link); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 22px; }
+
+header.site {
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(150deg, rgba(224,120,47,.26), rgba(184,67,42,.16) 60%, transparent);
+}
+header.site .wrap { display: flex; align-items: center; gap: 14px; padding-top: 18px; padding-bottom: 18px; }
+header.site img { width: 42px; height: 42px; border-radius: 50%; }
+header.site strong { font-size: 17px; letter-spacing: -.01em; }
+nav { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover, nav a[aria-current] { color: var(--fg); }
+
+h1 { font-size: 40px; line-height: 1.12; margin: 44px 0 14px; letter-spacing: -.02em; }
+.tagline { font-size: 19px; color: var(--muted); margin: 0 0 6px; max-width: 32em; }
+h2 { font-size: 21px; margin: 44px 0 12px; letter-spacing: -.01em; }
+h3 { font-size: 16px; margin: 26px 0 6px; }
+p, li { color: var(--body); }
+small, .muted { color: var(--muted); }
+
+.card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 14px; padding: 20px 22px; margin: 18px 0;
+}
+.card p:last-child { margin-bottom: 0; }
+
+.mail {
+  display: inline-block; margin-top: 6px; padding: 11px 20px; border-radius: 999px;
+  background: linear-gradient(120deg, var(--accent), var(--accent2));
+  color: #fff; text-decoration: none; font-weight: 600;
+}
+dl dt { font-weight: 600; margin-top: 18px; }
+dl dd { margin: 4px 0 0; color: var(--body); }
+
+table.credits { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0 4px; }
+table.credits th, table.credits td { text-align: left; vertical-align: top; padding: 9px 10px 9px 0; border-bottom: 1px solid var(--line); }
+table.credits th { color: var(--muted); font-weight: 500; white-space: nowrap; padding-right: 16px; }
+table.credits td { color: var(--body); }
+
+hr.lang { border: 0; border-top: 1px solid var(--line); margin: 56px 0 0; }
+
+footer.site { border-top: 1px solid var(--line); margin-top: 60px; padding: 26px 0 50px; font-size: 14px; }
+footer.site .wrap { display: flex; gap: 18px; flex-wrap: wrap; }
+footer.site a { color: var(--muted); text-decoration: none; }
+footer.site a:hover { color: var(--fg); }
+footer.site .spacer { flex: 1; }
+
+@media (max-width: 520px) {
+  h1 { font-size: 32px; }
+  nav { gap: 12px; }
+  table.credits th { white-space: normal; }
+}
